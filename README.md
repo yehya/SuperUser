@@ -8,7 +8,8 @@ Probably just scraping/gathering what users are searching for. Possibly more in 
 
 So we'll just go ahead and revert that, then add this to the chrome store.
 
-# Surfingkeys - Expand your browser with javascript and keyboard.
+# SuperUser
+## Expand your browser with javascript and keyboard.
 
 [![Node CI](https://github.com/brookhong/Surfingkeys/workflows/Node%20CI/badge.svg?branch=master)](https://github.com/brookhong/Surfingkeys/actions?query=workflow%3A%22Node+CI%22+branch%3Amaster)
 
