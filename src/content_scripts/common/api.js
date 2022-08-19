@@ -3,7 +3,6 @@ import Trie from './trie';
 import Mode from './mode';
 import KeyboardUtils from './keyboardUtils';
 import {
-    LOG,
     actionWithSelectionPreserved,
     constructSearchURL,
     getBrowserName,
@@ -58,13 +57,13 @@ function createAPI(clipboard, insert, normal, hints, visual, front, browser) {
                         return `${meta.word} for [${meta.annotation}] is overridden by [${annotation}].`;
                     });
                 }
-                LOG("warn", warning);
+                console.warn(warning);
             } else if (keys.length > 1) {
                 var p = keys.substr(0, keys.length - 1);
                 while (p.length > 0) {
                     old = mode.mappings.find(p);
                     if (old && old.meta) {
-                        LOG("warn", `${old.meta.word} for [${old.meta.annotation}] precedes ${keys}.`);
+                        console.warn(`${old.meta.word} for [${old.meta.annotation}] precedes ${keys}.`);
                         return;
                     }
                     p = p.substr(0, p.length - 1);
@@ -145,7 +144,7 @@ function createAPI(clipboard, insert, normal, hints, visual, front, browser) {
                     Mode.specialKeys[old_keystroke].push(new_keystroke);
                     dispatchSKEvent('addMapkey', ["Mode", new_keystroke, old_keystroke]);
                 } else {
-                    LOG("warn", `${old_keystroke} not found in normal mode.`);
+                    console.warn(`${old_keystroke} not found in normal mode.`);
                 }
             }
         }
